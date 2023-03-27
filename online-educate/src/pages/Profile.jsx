@@ -6,7 +6,7 @@ const Profile = () => {
   return (
     <div className='w-full h-full text-gray-500 font-semibold'>
         
-        <div className={`w-full relative gradient rounded-b-xl border-b-4 border-cyan-600 ${show ? 'h-3/4' : ''}`}>
+        <div className={`w-full relative gradient rounded-b-xl border-b-4 border-cyan-600 ${show ? 'h-3/5' : ''}`}>
                 <article className='w-full h-min px-2 pt-2 pb-4 '>
                     <h1>To'lov puli: 250 sum</h1>
                     <h1>Qarzdorlik: -250 sum</h1>
@@ -51,7 +51,7 @@ const Profile = () => {
                 </div>
 
         </div>
-                <div className='relative w-full'>
+                <div className='relative w-full h-8'>
                 <div className='w-full flex justify-between pb-2 px-4 absolute -top-9 font-bold'>
                     <button onClick={() => setShow(false)} className={`${show ? 'block' : 'hidden'} text-3xl`}><MdOutlineKeyboardDoubleArrowUp/></button>                    
                     <button onClick={() => setShow(false)} className={`${show ? 'block' : 'hidden'} text-3xl`}><MdOutlineKeyboardDoubleArrowUp/></button>                    
@@ -63,6 +63,25 @@ const Profile = () => {
                 
                 </div>
 
+
+                <div className='w-full flex flex-col justify-center items-center '>
+                    <h1 className='mb-4'>Akrom Abdullayev</h1>
+                    
+                    <div className='w-full mb-4'>
+                        <p className='w-full text-center'>Likes: 4235432</p>
+                        <div className='w-full flex justify-center items-center gap-4'>
+                            <p>Comments: 263564</p>
+                            <p>Saved: 33564</p>  
+                        </div>
+                    </div>
+                
+                </div>
+                
+                <div className='w-full flex gap-6 justify-center px-2 h-12'>
+                    <div>Posts</div>
+                    <div className='border-x-4 px-8'>Like</div>
+                    <div>Saved</div>
+                </div>
 
     </div>
   )
