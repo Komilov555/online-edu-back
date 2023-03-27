@@ -77,10 +77,10 @@ const Profile = () => {
                 
                 </div>
                 
-                <div className='w-full flex gap-6 justify-center px-2 h-12'>
+                <div className='w-full flex gap-6 justify-center px-2 h-8'>
                     <div>Posts</div>
                     <div className='border-x-4 px-8'>Like</div>
-                    <div>Saved</div>
+                    <div className=''>Saved</div>
                 </div>
 
     </div>
