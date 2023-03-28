@@ -10,9 +10,11 @@ import RegistartionWorker from "./pages/RegisterPupil";
 import { currentUser } from "./useContext/default";
 import Login from "./pages/Login";
 import Salary from "./pages/Salary";
-import HomePage from "./pages/Home";
+import Home from "./pages/Home";
 import { getUserByToken } from "./TypeScript/Auth";
 import Profile from "./pages/Profile";
+import Videos from "./pages/Videos";
+import ProfileWorker from "./pages/ProfileWorker";
 
 const App = () => {
   const navigate = useNavigate();
@@ -36,11 +38,10 @@ const App = () => {
   }, [token]);
   return (
     <div className="h-screen w-full">
-      <Profile/>
       <currentUser.Provider value={user}>
         <Routes>
           
-          {/* <Route path="/" element={<HomePage />} /> */}
+          <Route path="/" element={<Home/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<RegistartionStudent />} />
           <Route path="/oylik" element={<Salary />} />

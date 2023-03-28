@@ -3,10 +3,15 @@ import { MdOutlineKeyboardDoubleArrowDown , MdOutlineKeyboardDoubleArrowUp } fro
 
 const Profile = () => {
     const [show, setShow] = useState(false)
+    const [tabsToggle, setTabsToggle] = useState(1)
+
+    const tabToggle = (index) => {
+        setTabsToggle(index)
+    }
   return (
     <div className='w-full h-full text-gray-500 font-semibold'>
         
-        <div className={`w-full relative gradient rounded-b-xl border-b-4 border-cyan-600 ${show ? 'h-3/5' : ''}`}>
+        <div className={`w-full relative gradient rounded-b-xl border-b-4 border-cyan-600 ${show ? 'h-1/2' : ''}`}>
                 <article className='w-full h-min px-2 pt-2 pb-4 '>
                     <h1>To'lov puli: 250 sum</h1>
                     <h1>Qarzdorlik: -250 sum</h1>
@@ -15,6 +20,12 @@ const Profile = () => {
                 {
                     show ? 
                     <div className='w-full flex flex-col justify-center items-center'>
+                    <div className='w-full p-2'>
+                        <h1>Zona: 12</h1>
+                        <p className='text-sm'>Gruh boshlash va tugash sanasi: 12.01.2023/12.07.2023</p>
+                        <p className='text-sm'>Gruh arhivlash sanasi: 7-oy/12-iyul</p>
+
+                    </div>    
                     <h1 className='pb-1 px-4 border-b-2'>Online To'lov</h1>
                     <div className='w-full p-4 pt-7'>
                         <div className='w-full flex justify-around items-center pb-7'>
@@ -78,9 +89,29 @@ const Profile = () => {
                 </div>
                 
                 <div className='w-full flex gap-6 justify-center px-2 h-8'>
-                    <div>Posts</div>
-                    <div className='border-x-4 px-8'>Like</div>
-                    <div className=''>Saved</div>
+                    <div onClick={() => tabToggle(1)} className={`border-r-4 cursor-pointer px-6 ${tabsToggle === 1 ? 'border-b-4' : ''}`}>Posts</div>
+                    <div onClick={() => tabToggle(2)} className={`px-4 cursor-pointer ${tabsToggle === 2 ? 'border-b-4' : ''}`}>Like</div>
+                    <div onClick={() => tabToggle(3)} className={`border-l-4 cursor-pointer px-6 ${tabsToggle === 3 ? 'border-b-4' : ''}`}>Saved</div>
+                </div>
+
+                <div>
+
+                    <div className={`px-6 ${tabsToggle === 1 ? 'block' : 'hidden'}`}>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, asperiores suscipit qui facere eum, itaque sapiente perferendis molestias quod saepe consequuntur, expedita commod
+                        </p>
+                    </div>
+                    <div className={`px-6 ${tabsToggle === 2 ? 'block' : 'hidden'}`}>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, asperiores suscipit qui facere eum, itaque sapiente 
+                        </p>
+                    </div>
+                    <div className={`px-6 ${tabsToggle === 3 ? 'block' : 'hidden'}`}>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, asperiores suscipit qui facere eum, itaque sapiente perferendis molestias quod saepe consequuntur, expedita commodi! Recusandae porro mollitia eligendi sunt tempora deserunt?
+                        </p>
+                    </div>
+
                 </div>
 
     </div>
