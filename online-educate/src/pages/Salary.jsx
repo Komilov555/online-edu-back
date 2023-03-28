@@ -11,7 +11,7 @@ const Salary = () => {
         setShow(!show)
     }
     return (
-        <div className='w-full h-full bg-gradient bg-cover bg-center text-gray-400 text-3xl'>
+        <div className='w-full h-screen bg-gradient bg-cover bg-center text-gray-400 text-3xl'>
     
             <nav className='w-full p-6 text-gray-600 flex justify-center'>
                 <form className=''>

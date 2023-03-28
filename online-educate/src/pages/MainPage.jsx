@@ -4,7 +4,16 @@ import { Input } from "postcss"
 
 export default function MainPage() {
 
+    const [showInput, setShowInput] = useState(false)
+    const [valueInput, setValueInput] = useState(Number)
 
+    const handlerInput = (e) => {
+        setValueInput(e.target.value)
+        if(valueInput.valueOf() === String){
+            console.log('ne to')
+            return alert("summa raqam bo'liwi kerak")
+        }
+    }
 
     const [info, setInfo] = useState([
         {
@@ -31,6 +40,7 @@ export default function MainPage() {
         if (lett == 'b') {
             setInfo(value => [...value, {
                 name: nameRef.current.value
+
             }])
         }
 
@@ -84,12 +94,12 @@ export default function MainPage() {
                 <div className="tushumInputs">
                     <div className="tushum">
                         <p>Tushum</p>
-                        <h1>200 .000.000 sum</h1>
+                        <h1>200.000.000 sum</h1>
                     </div>
 
                     <div className="tushum">
                         <p>Kutilayotgan Tushum</p>
-                        <h1>400 .000.000 sum</h1>
+                        <h1>400.000.000 sum</h1>
                     </div>
                 </div>
                 <div className="slikas">
@@ -100,7 +110,7 @@ export default function MainPage() {
 
                         </div>
                         <div className="inputSilka ">
-                            <input type="text" placeholder="Ish Hdim" />
+                            <input type="text" placeholder="http//www.frontent.com" />
                             <input type="text" placeholder="O’quvchi" />
                             <input type="text" placeholder="Filyal" />
                         </div>
@@ -125,16 +135,58 @@ export default function MainPage() {
                     </div>
                 </div>
 
-                <div className="UsersInfo">
+                 <div className="flex w-full">
 
-                    <p>Kursi <input className="span" type="text" value={"Frontend"} /></p>
-                    <p>Gruh nomi <input className="span" type="text" value={"Frontend F68"} /></p>
-                    <p>ismi/familya <input className="span" type="text" value={"Jumaniyazov Alibek"} /></p>
+                <form className="UsersInfo">
+
+                    <p>Kursi <select className="">
+                        <option value="Frontend">Frontend</option>
+                        <option value="Backend">Backend</option>
+                        <option value="SMM">SMM</option>
+                        </select></p>
+                    <p>Gruh nomi <select className="">
+                        <option value="Frontend">Frontend F68</option>
+                        <option value="Backend">Frontend F69</option>
+                        <option value="SMM">Frontend F70</option>
+                        </select></p>
+                    <p>ismi/familya <input className="span" type="text" placeholder="Jumaniyozov Alibek" /></p>
                     <p>tel <input className="span" type="text" value={+998914373790} /></p>
-                    <a className="a" >750 ming sum</a>
+                        
+                        {
+                            showInput ? <div className="flex">
+                                 <input className='a bg-transparent' placeholder='summa ni kiriting' onChange={e => handlerInput(e)} type="text" />
+                                 <button className={`a ${showInput ? 'block' : 'hidden'}`} onClick={() => setShowInput(false)}>Complete</button>
+                            </div>
+                            : <button onClick={() => setShowInput(true)} className="a" >{valueInput} ming som</button>
+                        }
+
+
                     <a className="tushish" >Tasdiklash {right}</a>
+
                     
-                </div>
+                    
+                </form>
+                <div className='w-full flex justify-around items-center pb-7'>
+                            
+                            <div className='w-32  rounded-full bg-white justify-center flex items-center'>
+                                <img src="public/payme-01.png" className='scale-110 bg-center bg-contain' alt="" />
+                            </div>
+                            
+                             <div className='w-32  rounded-full bg-white justify-center flex items-center'>
+                                <img src="public/Click-01.png" className='scale-110 bg-center bg-contain' alt="" />
+                            </div>
+                       
+                            
+                            <div className='w-32 h-32 rounded-full bg-white justify-center flex items-center'>
+                                <img src="public/logo-horizontal-black-colored.png" className='scale-110 bg-center bg-contain' alt="" />
+                            </div>
+                            
+                             <div className='w-32 h-32 rounded-full  bg-white justify-center flex items-center'>
+                               <h1 className='w-32 text-sm flex flex-col items-center justify-center font-bold text-black/70'>Humo/<span>UzCard </span></h1>
+                            </div>
+                       
+                            </div>       
+                        </div>
             </div>
         </div>
     )
