@@ -15,6 +15,8 @@ import { getUserByToken } from "./TypeScript/Auth";
 import Profile from "./pages/Profile";
 import Videos from "./pages/Videos";
 import ProfileWorker from "./pages/ProfileWorker";
+import MainPage from "./pages/MainPage";
+import AddStudent from "./pages/DataGrid";
 
 const App = () => {
   const navigate = useNavigate();
@@ -51,6 +53,7 @@ const App = () => {
           <Route path="/buyAdmin" element={<BuyAdmin />} />
         </Routes>
       </currentUser.Provider>
+     <AddStudent/>
     </div>
   );
 };
