@@ -5,13 +5,17 @@ import { Input } from "postcss"
 export default function MainPage() {
 
     const [showInput, setShowInput] = useState(false)
-    const [valueInput, setValueInput] = useState(Number)
+    const [valueInput, setValueInput] = useState(Number(750))
 
     const handlerInput = (e) => {
         setValueInput(e.target.value)
-        if(valueInput.valueOf() === String){
-            console.log('ne to')
-            return alert("summa raqam bo'liwi kerak")
+            
+    }
+    const checkValue = () => {
+        setShowInput(false)
+        if(typeof valueInput !== NaN){
+            alert('xz')
+            setValueInput(750)
         }
     }
 
@@ -155,7 +159,7 @@ export default function MainPage() {
                         {
                             showInput ? <div className="flex">
                                  <input className='a bg-transparent' placeholder='summa ni kiriting' onChange={e => handlerInput(e)} type="text" />
-                                 <button className={`a ${showInput ? 'block' : 'hidden'}`} onClick={() => setShowInput(false)}>Complete</button>
+                                 <button className={`a ${showInput ? 'block' : 'hidden'}`} onClick={() => checkValue()}>Complete</button>
                             </div>
                             : <button onClick={() => setShowInput(true)} className="a" >{valueInput} ming som</button>
                         }
@@ -182,7 +186,7 @@ export default function MainPage() {
                             </div>
                             
                              <div className='w-32 h-32 rounded-full  bg-white justify-center flex items-center'>
-                               <h1 className='w-32 text-sm flex flex-col items-center justify-center font-bold text-black/70'>Humo/<span>UzCard </span></h1>
+                               <h1 className='w-32 text-xl flex flex-col items-center justify-center font-bold text-black/70'>Humo/<span>UzCard </span></h1>
                             </div>
                        
                             </div>       
