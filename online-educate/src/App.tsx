@@ -39,11 +39,11 @@ const App = () => {
     }
   }, [token]);
   return (
-    <div className="h-screen w-full">
+    <div className="">
       <currentUser.Provider value={user}>
         <Routes>
           
-          <Route path="/" element={<Home/>} />
+          {/* <Route path="/" element={<Home/>} /> */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<RegistartionStudent />} />
           <Route path="/oylik" element={<Salary />} />
