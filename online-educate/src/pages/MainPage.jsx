@@ -1,7 +1,5 @@
-import logo from "../images/logo.png"
-import user from "../../public/photo-1501196354995-cbb51c65aaea.avif"
 import "../styles/main.css"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Input } from "postcss"
 
 export default function MainPage() {
@@ -39,6 +37,10 @@ export default function MainPage() {
 
     }
 
+    useEffect(() => {
+        nameRef.current.value = ''
+    },[click])
+
     function close() {
         const inpust = document.querySelector('.addInputRight')
         inpust.classList.remove('open')
@@ -53,7 +55,7 @@ export default function MainPage() {
         <div className="MainPage">
             <div className="mainHeader">
                 <ul className="lists">
-                    <img src={logo} alt="" />
+                    <img src='../public/pngwing.com (2).png' alt="" />
                     <li className="p" >Finace site</li>
                     <li className="listsItems">Guruh</li>
                     <li className="listsItems">qarzdorlar</li>
@@ -70,7 +72,7 @@ export default function MainPage() {
                     pochta
                     Kalendar
                     <div className="user">
-                        <img src={user} alt="" />
+                        <img src='./public/photo-1501196354995-cbb51c65aaea.avif' alt="" />
                         <div className="userNamee">
                             <p className="name">Sarvar</p>
                             <p className="surname">Abdurashidov</p>

@@ -53,7 +53,7 @@ const App = () => {
           <Route path="/buyAdmin" element={<BuyAdmin />} />
         </Routes>
       </currentUser.Provider>
-     <AddStudent/>
+     <MainPage/>
     </div>
   );
 };
