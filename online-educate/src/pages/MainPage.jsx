@@ -7,15 +7,16 @@ export default function MainPage() {
     const [showInput, setShowInput] = useState(false)
     const [valueInput, setValueInput] = useState(Number(750))
 
+    const summaRef = useRef()
+
     const handlerInput = (e) => {
         setValueInput(e.target.value)
-            
     }
     const checkValue = () => {
         setShowInput(false)
         if(typeof valueInput !== NaN){
             alert('xz')
-            setValueInput(750)
+            setValueInput(summaRef.current.value)
         }
     }
 
@@ -158,7 +159,7 @@ export default function MainPage() {
                         
                         {
                             showInput ? <div className="flex">
-                                 <input className='a bg-transparent' placeholder='summa ni kiriting' onChange={e => handlerInput(e)} type="text" />
+                                 <input ref={summaRef} className='a bg-transparent' placeholder='summa ni kiriting' onChange={e => handlerInput(e)} type="text" />
                                  <button className={`a ${showInput ? 'block' : 'hidden'}`} onClick={() => checkValue()}>Complete</button>
                             </div>
                             : <button onClick={() => setShowInput(true)} className="a" >{valueInput} ming som</button>
