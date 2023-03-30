@@ -15,7 +15,6 @@ export default function MainPage() {
     const checkValue = () => {
         setShowInput(false)
         if(typeof valueInput !== NaN){
-            alert('xz')
             setValueInput(summaRef.current.value)
         }
     }
@@ -117,7 +116,6 @@ export default function MainPage() {
                         <div className="inputSilka ">
                             <input type="text" placeholder="http//www.frontent.com" />
                             <input type="text" placeholder="O’quvchi" />
-                            <input type="text" placeholder="Filyal" />
                         </div>
                     </div>
                 </div>
@@ -140,7 +138,7 @@ export default function MainPage() {
                     </div>
                 </div>
 
-                 <div className="flex w-full">
+                 <div className="flex w-full mb-40">
 
                 <form className="UsersInfo">
 
@@ -165,13 +163,16 @@ export default function MainPage() {
                             : <button onClick={() => setShowInput(true)} className="a" >{valueInput} ming som</button>
                         }
 
+                    <div className="flex justify-between w-full text-white font-semibold">
 
-                    <a className="tushish" >Tasdiklash {right}</a>
+                    <button className="bg-red-400 p-2 px-4 rounded-xl active:scale-90" >Delete</button>
+                    <button className="bg-blue-400 p-2 px-4 rounded-xl active:scale-90 transiton-all" >Tasdiklash {right}</button>
+                    </div>
 
                     
                     
                 </form>
-                <div className='w-full flex justify-around items-center pb-7'>
+                <div className='w-full flex justify-around items-center pb-7 '>
                             
                             <div className='w-32  rounded-full bg-white justify-center flex items-center'>
                                 <img src="public/payme-01.png" className='scale-110 bg-center bg-contain' alt="" />
