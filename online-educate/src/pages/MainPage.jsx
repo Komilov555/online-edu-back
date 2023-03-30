@@ -160,7 +160,7 @@ export default function MainPage() {
                                  <input ref={summaRef} className='a bg-transparent' placeholder='summa ni kiriting' onChange={e => handlerInput(e)} type="text" />
                                  <button className={`a ${showInput ? 'block' : 'hidden'}`} onClick={() => checkValue()}>Complete</button>
                             </div>
-                            : <button onClick={() => setShowInput(true)} className="a" >{valueInput} ming som</button>
+                            : <button onClick={() => setShowInput(true)} className="a" >{valueInput} som</button>
                         }
 
                     <div className="flex justify-between w-full text-white font-semibold">
